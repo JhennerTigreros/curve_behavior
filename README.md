@@ -10,7 +10,7 @@ Table of contents
       * [Web Scrapping](#web-scrapping)
       * [Twitter](#twitter)
    * [Docker](#docker)
-   * [Deploy](#deplou)
+   * [Deploy](#deploy)
    * [Appendix](#appendix)
 
 Context

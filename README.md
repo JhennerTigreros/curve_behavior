@@ -1,7 +1,7 @@
 Table of contents
 =================
    * [Context](#context)
-   * [Aproximation](#aproximation)
+   * [Approach](#approach)
    * [Data sources](#data_sources)
    * [Resources](#resources)
    * [Usage](#usage)
@@ -16,7 +16,7 @@ Table of contents
 Context
 =================
 
-Aproximation
+Approach
 =================
 
 Data sources

@@ -1,0 +1,20 @@
+news_sites:
+  eltiempo:
+    url: https://www.eltiempo.com/
+    queries:
+      select_table_content: '.btn .btn-gray a'
+  elespectador:
+    url: https://www.elespectador.com/
+    queries:
+      select_table_content: '.btn .btn-gray a'
+dane_sites:
+  employe:
+    base: https://www.dane.gov.co
+    url: https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo
+    queries:
+      select_table_content: 'td div a'
+banrep_sites:
+  statistics:
+    url: https://www.banrep.gov.co/es/estadisticas/indice-precios-consumidor-ipc
+    queries:
+      select_table_content: '.btn .btn-gray a'

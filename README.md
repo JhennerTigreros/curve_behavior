@@ -31,7 +31,7 @@ I want to answer, Are the state control agencies and politicians statements affe
 Data sources
 =================
 
-<strong>Note: The data of the positive daily cases need to be rigth padded to be consistency with the fact that the test only be used in general for people that shows symptoms and take an average of 5-6 days, however it can take up to 14 days. ([WHO, 2020](https://www.who.int/health-topics/coronavirus#tab=tab_3))</strong>
+<strong>Note: Data for positive daily cases must be right shifted to be consistent with the fact that the test is generally only used for people showing symptoms and takes an average of 5-6 days, however it can take up to 14 days. ([WHO, 2020](https://www.who.int/health-topics/coronavirus#tab=tab_3))</strong>
 
 The data will be collected from different sources, all the collected data will be passed through a processing and aggregation ETL to finally end up in a data lake in Amazon RedShift
 

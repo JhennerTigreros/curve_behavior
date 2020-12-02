@@ -4,7 +4,7 @@ logging.basicConfig(level = logging.INFO)
 
 from datetime import datetime, timedelta
 import pandas as pd
-from config import gov_config
+from .config import gov_config
 
 logger = logging.getLogger(__name__)
 

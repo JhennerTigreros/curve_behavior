@@ -1,32 +1,30 @@
 import logging
 logging.basicConfig(level = logging.INFO)
 
+from urllib.error import HTTPError
 
-from utils.news_feed import Feed
-from utils.dane_page import Unemployement
-from utils.banrep_page import Inflation
+import requests
 
-from config import web_scrapping
+from .utils.news_feed import Feed
+
+from .config import web_scrapping
 
 logger = logging.getLogger(__name__)
 
-def _news_scrapper(news_site):
-    return Feed(news_site['eltiempo'], news_site['eltiempo']['url'])
-
-def _dane_scrapper(news_site):
-    page = Unemployement(news_site['employe'], news_site['employe']['url'])
-    return page
-
-def _banrep_scrapper(news_site):
-    return Inflation(news_site['statistics'], news_site['statistics']['url'])
+def _news_scrapper(news_site, site):
+    news = []
+    for x in range(1, 100):
+        try:
+            feed = Feed(news_site[site], news_site[site]['url'].replace('$PAGE', str(x)))
+            news.append(feed.article_object)
+        except requests.HTTPError as exception:
+            print(exception)
+            break
+    return news
 
 def load():
     config = web_scrapping()
+    news_eltiempo = _news_scrapper(config['news_sites'], 'eltiempo')
+    #news_elespectador = _news_scrapper(config['news_sites'], 'elespectador')
 
-    #news = _news_scrapper(config['news_sites'])
-    dane = _dane_scrapper(config['dane_sites'])
-    #banrep = _banrep_scrapper(config['banrep_sites'])
-    print(dane._to_pandas())
-    #return news._to_pandas(), dane._to_pandas(), banrep._to_pandas()
-
-load()
+    return news_eltiempo

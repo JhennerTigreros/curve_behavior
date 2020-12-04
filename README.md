@@ -27,7 +27,7 @@ In the present days, the pandemic, social changes and economic upheavals need a 
 Approach
 =================
 
-The main idea behind the analisys of the curve and the social and economic changes is to understand how the pandemic brought afloat of certain problems and some culture artifacts in Colombia. I try to understand the behavior keeping in mind some useful variables and data like, data from Colombia Goverment about daily positive cases and number of test do it, this to have and idea of the reality of the pandemic growing, but those variables have shadow data that can affect the behavior of the curve which are the social and media information that circulate in social networks like Twitter, this unstructured data will be brought from Twitter API and analyzed to understand the sentiments and thoughts of general population. The complete analisys center in understand the sentiments and ideas of the people and actions taken by the goverment and finalcial institutes to see the evolution of the curve. Taken the data from different sources enrich the understanding of the real behavior and can led me to predict the behavior in near future and of course analysis the effectiveness of the actions taken by state control agencies.
+The main idea behind the analisys of the curve and the social and economic changes is to understand how the pandemic brought afloat of certain problems and some culture artifacts in Colombia. I try to understand the behavior keeping in mind some useful variables and data like, data from Colombia Goverment about daily positive cases and number of test do it, this to have and idea of the reality of the pandemic growing, but those variables have shadow data that can affect the behavior of the curve which are the social and media information that circulate in social networks like Twitter, this unstructured data will be brought from Twitter API and analyzed to understand the sentiments and thoughts of general population. The complete analisys center in understand the sentiments and ideas of the people and actions taken by the goverment and finalcial institutes to see the evolution of the curve. Taken the data from different sources enrich the understanding of the real behavior and can lead me to predict the behavior in near future and of course analysis the effectiveness of the actions taken by state control agencies.
 
 I want to answer, Are the state control agencies and politicians statements affecting positive or negative the growing of the curve? and How did the actions and policies taken by the state affect the evolution of COVID 19 affect departments in lower states of quality of life?
 
@@ -46,12 +46,12 @@ The data of COVID cases and test done daily will be extracted from [www.datos.go
 * [Casos positivos de COVID-19 en Colombia](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr)
 * [Pruebas PCR procesadas de COVID-19 en Colombia (Departamental)](https://www.datos.gov.co/Salud-y-Protecci-n-Social/Pruebas-PCR-procesadas-de-COVID-19-en-Colombia-Dep/8835-5baf)
 
-I user this api to load and download update data from last valid day.
+I used this api to load and download update data from last valid day.
 
 Web Scrapping
 -----
 
-To obtain the latest political and economic news, the data will be collected through web scraping of the main Colombian newspapers, specifically:
+To obtain the latest political and economic news, the data will be collected through web scrapping of the main Colombian newspapers, specifically:
 
 * [El Tiempo](https://www.eltiempo.com/)
 
@@ -63,7 +63,7 @@ Other information necessary to obtain more knowledge about the current state of 
 Twitter
 -----
 
-To get real time data to use to sentiment analisys and make and average of the population mood I use Twitter API to search tweet related to COVID19 issue in Colombia, using the lookup tweet endpoint and filtered stream feature. To use Twitter API follow [the guide](https://developer.twitter.com/en/docs/twitter-api/getting-started/guide)
+To get real time data to use to sentiment analisys and make and average of the population mood I used Twitter API to search tweet related to COVID19 issue in Colombia, using the lookup tweet endpoint and filtered stream feature. To use Twitter API follow [the guide](https://developer.twitter.com/en/docs/twitter-api/getting-started/guide)
 
 Resources
 =================

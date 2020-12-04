@@ -25,6 +25,5 @@ def _news_scrapper(news_site, site):
 def load():
     config = web_scrapping()
     news_eltiempo = _news_scrapper(config['news_sites'], 'eltiempo')
-    #news_elespectador = _news_scrapper(config['news_sites'], 'elespectador')
 
     return news_eltiempo

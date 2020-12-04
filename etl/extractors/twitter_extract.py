@@ -1,8 +1,10 @@
 from searchtweets import ResultStream, gen_request_parameters, load_credentials, collect_results
 import datetime
 from functools import reduce
+from .config import twitter_conifg
 
 def load():
+    config = twitter_conifg()
     base_date = datetime.datetime.today()
     date_list = [ base_date - datetime.timedelta(days = x) for x in range(5)]
     date_list.reverse()
@@ -14,7 +16,7 @@ def load():
                             yaml_key="search_tweets_v2",
                             env_overwrite=False)
 
-            query = gen_request_parameters("covid19 colombia lang:es", results_per_call=100,
+            query = gen_request_parameters(config['query'], results_per_call=100,
                         place_fields='country', start_time=date.strftime('%Y-%m-%d'), end_time=final_date.strftime('%Y-%m-%d'))
 
             tweets = collect_results(query,

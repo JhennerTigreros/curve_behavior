@@ -2,19 +2,22 @@ Table of contents
 =================
    * [Context](#context)
    * [Approach](#approach)
-   * [Data sources](#data_sources)
+   * [Data sources](#data-sources)
       * [APIs](#apis)
       * [Web Scrapping](#web-scrapping)
       * [Twitter](#twitter)
-   * [Docker](#docker)
    * [Resources](#resources)
-      * [EC2 Instance](#ec2_instance)
-      * [Data Lake](#data_lake)
+      * [EC2 Instance](#ec2-instance)
+      * [Data Lake](#data-lake)
    * [Architecture](#architecture)
+   * [Project structure](#project-structure)
+   * [Phases](#phases)
+     * [ETL](#etl)
+     * [EDA](#eda)
    * [Deploy](#deploy)
    * [Appendix](#appendix)
-      * [Estimate Cloud Costs](#estimate_cloud_costs)
-      * [Estimate Time Costs](#estimate_time_costs)
+      * [Estimate Cloud Costs](#estimate-cloud-costs)
+      * [Estimate Time Costs](#estimate-time-costs)
 
 Context
 =================
@@ -51,7 +54,6 @@ Web Scrapping
 To obtain the latest political and economic news, the data will be collected through web scraping of the main Colombian newspapers, specifically:
 
 * [El Tiempo](https://www.eltiempo.com/)
-* [El Espectador](https://www.elespectador.com/)
 
 Other information necessary to obtain more knowledge about the current state of Colombia and its economy. I need to collect data on unemployment and inflation trends.
 
@@ -82,6 +84,47 @@ Architecture
 ![Architecture](./media/architecture.svg)
 
 The cloud architecture to deploy the ETL process to collect and ingest data in the RedShift data lake will be simple because only has and EC2 instance that trigger by a cron job a python script that will be resposible for extract, transform and load the data in Redshift. The aggregate data will be used in the Exploratory Data Analysis (EDA)
+
+Project Structure
+=================
+
+* eda/ -> folder containing all data analysis
+* etl/ -> folder containing all data extraction and transformation
+  * configs/ -> containing configs for extracting the data from APIs and web scrapping
+    * gov_api.yaml
+    * twitter_api.yaml
+    * web_scrapping.yaml
+  * database/ -> SQL files to create the mineable views and load script (Postgres and RedShift).
+    * create_postgres.sql
+    * create_redshift.sql
+    * load_postgres.sql
+    * load_redshift.sql
+  * extractors/ -> containing folder of all modules and classes to scrap and bring data from APIs or web pages
+    * data/ -> local data downloaded from DANE and Banco de la Republica
+      * employe.xlsx
+      * inflation.xlsx
+    * utils/ -> classes to abstract the web scrapping behavior
+      * news_feed.py
+      * news_page.py
+    * config.py
+    * gov_extract.py -> module in charge of loading data from datos.gov.co
+    * local_extract.py -> module in charge of loading local data
+    * twitter_extract.py -> module in charge of bring data from Twitter API
+    * web_scrapping.py -> module in charge of web scrap "El Tiempo"
+  * requirements.txt
+  * run.ipynb -> JP notebook containing the detailed ETL process
+  * output/ -> output folder of data csv files
+
+Phases
+=================
+
+ETL
+-----
+
+The ETL processes was made using techniques as web scrapping and using open and private APIs abstracting certain behavior in modules and classes, making it an easy process to modify and improve in near future. The complete and documentated process is [here](./etl/run.ipynb)
+
+EDA
+-----
 
 Deploy
 =================

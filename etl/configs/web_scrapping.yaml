@@ -3,6 +3,12 @@ news_sites:
     url: http://www.eltiempo.com/buscar/$PAGE?q=covid&category=salud&publishedAt%5Bfrom%5D=20-02-01&publishedAt%5Buntil%5D=20-12-01&contentTypes%5B0%5D=article
     queries:
       articles: 'listing'
+      title: '.title'
+      category: '.category'
+      epigraph: '.epigraph'
+      published_time:
+        - '.published-at'
+        - 'published-unix'
   elespectador:
     url: https://www.elespectador.com/
     queries:

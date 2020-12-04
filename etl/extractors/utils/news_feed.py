@@ -26,10 +26,10 @@ class Feed:
         for article in articles:
             objects.append(
                 {
-                    "title": article.select_one('.title').text,
-                    "publised_time": datetime.fromtimestamp(int(article.select_one('.published-at')['published-unix'])),
-                    "category": article.select_one('.category').text,
-                    "resume": article.select_one('.epigraph').text,
+                    "title": article.select_one(self._queries['title']).text,
+                    "publised_time": datetime.fromtimestamp(int(article.select_one(self._queries['published_time'][0])[self._queries['published_time'][1]])),
+                    "category": article.select_one(self._queries['category']).text,
+                    "resume": article.select_one(self._queries['epigraph']).text,
                 }
             )
         return objects

@@ -128,9 +128,6 @@ EDA
 
 The EDA process was made using libraries and querying the data loaded to mineable views in ETL process, to see the complete and documented process you can see [here](./eda/run.ipynb)
 
-Deploy
-=================
-
 Appendix
 =================
 

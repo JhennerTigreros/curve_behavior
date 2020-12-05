@@ -71,12 +71,12 @@ Resources
 EC2 Instance
 -----
 
-
+To deploy the ETL process to recolect data from different sources for later use in EDA process, we need to run the code each day, to update with last data from the used sources. For that I proposed to deploy the code in EC2 instance that can be trigger with cron job in aws cloudwatch to start the ETL process. You can see the pricing [here](https://aws.amazon.com/es/ec2/pricing/on-demand/), to lowest cost in this project I propose to use a on demand machine specifically a1.xlarge with an hour cost of $ 0.102
 
 Data Lake
 -----
 
-
+And important thing when we are working in Big Data and EDA process is the storage where we save our data. For that I propose to use AWS RedShift to store data in production, this for its flexibility, lowest cost and easy use with Standard SQL. You can see the pricing [here](https://aws.amazon.com/es/redshift/pricing/). Taking into account that the amount of data using in this project with the limitations of twitter api and web scrapping, I propose to use dc2.large machine wiht an hour cost of $ 0.25.
 
 Architecture
 =================
@@ -125,6 +125,8 @@ The ETL processes was made using techniques as web scrapping and using open and 
 
 EDA
 -----
+
+The EDA process was made using libraries and querying the data loaded to mineable views in ETL process, to see the complete and documented process you can see [here](./eda/run.ipybn)
 
 Deploy
 =================

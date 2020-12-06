@@ -14,9 +14,6 @@ Table of contents
    * [Phases](#phases)
      * [ETL](#etl)
      * [EDA](#eda)
-   * [Appendix](#appendix)
-      * [Estimate Cloud Costs](#estimate-cloud-costs)
-      * [Estimate Time Costs](#estimate-time-costs)
 
 Context
 =================
